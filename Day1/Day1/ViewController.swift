@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var usernameTxtFld: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,7 +28,8 @@ class ViewController: UIViewController {
         if (segue.identifier == "identifierwelcome") {
             // pass data to next view
             let destinationObj:WelcomeViewController = segue.destination as! WelcomeViewController
-            print("%@",destinationObj);
+            destinationObj.username=usernameTxtFld.text as String!
+//            print(destinationObj);
             
         }
     }
